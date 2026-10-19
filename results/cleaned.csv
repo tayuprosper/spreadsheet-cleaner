@@ -1,0 +1,21 @@
+ID,Company Name,Registration Number,Tax ID,Email,Phone,Country,Industry,confidence,notes
+TC01,Sars Textiles Ltd,RC/DLA/2024/B/1123,CM-TIN-04471123,finance@sarstextiles.cm,+237 674 22 15 09,Cameroon,Manufacturing,,
+TC02,K,RC/DLA/2024/B/1124,CM-TIN-04471124,info@ktrading.cm,+237 674 22 15 10,Cameroon,Retail,,
+TC03,,RC/DLA/2024/B/1125,CM-TIN-04471125,info@blankco.cm,+237 674 22 15 11,Cameroon,Retail,,
+TC04,Sars Textiles Ltd,RC/DLA/2024/B/1199,CM-TIN-04471199,newcontact@sarstextiles.cm,+237 674 22 15 12,Cameroon,Manufacturing,,
+TC05,Kembo Motors,RC/YAO/2023/A/0788,CM-TIN-05512340,sales@kembomotors.cm,+237 699 40 12 63,Cameroon,Automotive,,
+TC06,Berlin Auto Parts GmbH,RC/DLA/2024/B/1123,DE281459732,sales@berlinautoparts.de,+49 30 1234 5678,Germany,Automotive,0.9,"Country: 'United States' -> 'Germany' (phone +49, German Tax ID DE, .de email domain)"
+TC07,Yaounde Weavers Co-op,RC/YAO/2023/A/0788,CM-TIN-05512341,orders@yaoundeweavers.cm,+237 655 88 20 41,Cameroon,Manufacturing,,
+TC08,Berlin Auto Parts GmbH,HRB-55214,DE281459732,sales@berlinautoparts.de,+49 30 1234 5678,Germany,Automotive,,
+TC09,Denver Coffee Traders,ΕΙΝ58-1029384-,DE281459732,hello@denvercoffee.us,+1 303 555 0148,United States,Food & Beverage,0.4,"Registration Number appears malformed (trailing dash, possibly Greek letters); Tax ID 'DE281459732' appears wrong for US company but cannot confidently correct"
+TC10,Bafoussam Cocoa Exports,RC/BAF/2022/C/0456,M090312345678P (entered while Country was Cameroon),export@bafoussamcocoa.cm,+237 674 20 11 05,Cameroon,Agriculture,0.85,"Country: 'Nigeria' -> 'Cameroon' (phone +237, .cm email domain, Cameroonian registration number); Tax ID kept as-is with original note"
+TC11,Nkolo Fintech Solutions,RC/DLA/2024/D/0921,CM-TIN-06612233,team@nkolofintech.cm,+237 677 90 10 44,Cameroon,Financial Services,,
+TC12,Douala Freight Ltd,RC/DLA/2024/B/1140,CM-TIN-04471140,finance@doualareight.cm,+237 677 40 20 10,Cameroon,Logistics,0.4,"Email: 'finance@@sarstextiles' -> corrected '@@' to '@', but domain 'sarstextiles' appears wrong for Douala Freight Ltd (incomplete/wrong domain); changed to 'finance@doualareight.cm' as best guess but uncertain"
+TC13,Kribi Seafood Exports,RC/DLA/2024/B/1141,CM-TIN-04471141,finance@sarstextiles.cm,+237 677 40 20 11,Cameroon,Food & Beverage,0.5,Email domain 'sarstextiles.cm' does not match company 'Kribi Seafood Exports' but kept as-is since correct value unknown
+TC14,Garoua Cotton Mills,RC/GAR/2023/E/0334,CM-TIN-07723345,admin@garouacotton.cm,+237 694 11 22 33,Cameroon,Manufacturing,,
+TC15,Buea Tech Hub,RC/BUE/2024/F/0212,CM-TIN-08834456,hello@bueatechhub.cm,+237 674 22 15 09,Cameroon,Technology,0.7,"Columns shifted: Phone and Country were swapped; Phone: '674221509' -> '+237 674 22 15 09', Country: 'Cameroon' (was in Phone column)"
+TC16,Limbe Tourism Group,RC/LIM/2023/G/0678,CM-TIN-09945567,info@limbetourism.cm,+1 415 555 0142,Cameroon,Tourism,0.5,"Columns shifted: Country 'Cameroon' was in Phone column, Phone '+1 415 555 0142' was in Country column; Phone appears to be US number but Country is Cameroon (based on Tax ID CM-TIN), contradiction kept"
+TC17,Freedonia Shipping Co,RC/FRE/2024/H/0090,FR-TIN-00112233,contact@freedoniashipping.com,+1 555 200 3000,Freedonia,Logistics,,
+TC18,Yaounde Robotics Ltd,RC/YAO/2024/1/0345,CM-TIN-01023456,info@yaounderobotics.cm,+237 677 50 60 70,Cameroon,Space Tourism,,
+TC19,Nkolo Microfinance Group,RC/DLA/2024/B/1188,CM-TIN-04471188,contact@nkolomfi.cm,+237 677 60 70 80,Cameroon,Financial Services,,
+TC20,,RC/XX/0000/Z/0001,XX-000 (wrong format),admin@@krendo,+237 677 00 00 00,,Manufacturing,0.3,Company Name empty; Tax ID noted as wrong format but kept as-is; Email 'admin@@krendo' has double @ and incomplete domain but cannot determine correct value; Country empty

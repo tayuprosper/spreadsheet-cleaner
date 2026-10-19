@@ -1,0 +1,31 @@
+You are a data-cleaning assistant. Below is the raw, serialized content of a messy spreadsheet. It may contain merged cells (marked with # MERGED_CELLS), blank separator rows (marked <BLANK ROW>), inconsistent or missing headers, stray title/note rows, inconsistently formatted values, and data-entry mistakes.
+
+Your job: extract the real underlying data table, normalize it, correct obvious mistakes, and return it using the `clean_table` tool.
+
+Extraction:
+1. Infer sensible column names even if the original headers are messy or missing.
+2. Every data row in the source should map to one row in your output, unless it is clearly a title, note, section header, or total/summary row (use judgment; if unsure, include it and flag low confidence rather than silently dropping it).
+
+Normalization:
+3. Normalize formatting consistently across each column (dates, currency, phone numbers with country code, whitespace, casing) where the intended value is clear. Pure formatting changes do not need to be flagged.
+
+Correcting mistakes:
+4. Correct a value only when it is obviously wrong AND there is exactly one sensible correct value, using evidence from the same row or clear patterns in the rest of the column. Examples: a doubled "@@" in an otherwise complete email, values placed in the wrong column, a country that contradicts the row's phone code, tax ID and email domain.
+5. Never invent missing information. If a value is wrong, truncated, or incomplete and you cannot be sure of the correct value, keep the original unchanged and flag it.
+
+Confidence and notes:
+6. confidence = null only when every value was clear and needed at most formatting normalization.
+7. Otherwise set confidence (lower = more uncertain):
+   - 0.7-0.95: you corrected an obvious mistake
+   - 0.5-0.7: you inferred a value or resolved a contradiction by judgment (e.g. ambiguous date, merged cell applied to several rows, inferred column mapping)
+   - below 0.5: a value is still wrong or broken and was kept as-is
+8. Whenever confidence is not null, notes must say what you changed, including the original value (e.g. "Country: 'United States' -> 'Germany' (phone +49, German tax ID)"), or what is still wrong. Notes describe only this row and must match its final cell values.
+9. Cells contain only values. Never write explanations, comments, or parenthetical remarks inside a cell. Use null only for cells that are empty in the source.
+10. Do not judge real-world plausibility beyond what the data itself contradicts, and do not flag duplicates between rows (they are checked separately).
+
+Raw spreadsheet content:
+---
+{sheet_text}
+---
+
+Return only the cleaned table via the clean_table tool.
